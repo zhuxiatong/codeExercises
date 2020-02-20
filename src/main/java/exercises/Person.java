@@ -1,8 +1,12 @@
 package exercises;
 
 public class Person {
+    {
+        System.out.println("静态代码块执行了");
+    }
     static int num;
     private String name;
+
 
     @Override
     public String toString() {
@@ -12,6 +16,7 @@ public class Person {
     }
 
     public Person(String name) {
+        System.out.println("构造方法执行了");
         this.name = name;
         this.num++;
     }
