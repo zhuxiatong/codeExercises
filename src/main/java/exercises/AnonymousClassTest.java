@@ -15,8 +15,6 @@ public class AnonymousClassTest {
         }.test();
 
 
-
-
     }
 
 }
