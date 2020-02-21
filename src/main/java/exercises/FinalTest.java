@@ -9,6 +9,7 @@ public class FinalTest {
         // 如果程序再次执行String b="java"
         // 系统将会让b直接指向字符串池中的"java"字符串
         // 因此a==b将会返回true
+
         final String a = "zxt";
         final String b = "zz";
         String d = "zxtzz";
