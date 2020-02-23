@@ -8,7 +8,7 @@ public class FinalizeTest {
         new FinalizeTest();
 
         Runtime.getRuntime().gc();
-
+        //如果没有休眠的话。就会有可能没有发生GC 从而不会调用finalize方法 这样 f就会出现空指针异常
         Thread.sleep(200);
         f.info();
     }

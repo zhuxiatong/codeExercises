@@ -15,6 +15,7 @@ class  Test1 extends  ClassA{
         System.out.println("B");
     }
 
+
     public Test1() {
         System.out.println("D");
     }
