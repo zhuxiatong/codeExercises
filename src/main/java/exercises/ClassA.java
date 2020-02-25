@@ -8,11 +8,13 @@ public class ClassA {
 
     public ClassA() {
         System.out.println("C");
+
     }
 }
 class  Test1 extends  ClassA{
     static{
         System.out.println("B");
+
     }
 
 
