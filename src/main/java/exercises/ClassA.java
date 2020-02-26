@@ -24,5 +24,6 @@ class  Test1 extends  ClassA{
 
     public static void main(String[] args) {
         new Test1();
+
     }
 }
