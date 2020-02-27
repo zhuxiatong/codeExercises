@@ -10,5 +10,6 @@ public class RunTimeTest {
         System.out.println("最大内存"+runtime.maxMemory());
         System.out.println("系统调用");
         runtime.exec("notepad.exe");
+        System.out.println("sss" instanceof String);
     }
 }
