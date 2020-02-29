@@ -23,6 +23,7 @@ public class JDBCtest {
                     properties.getProperty("url"),
                     properties.getProperty("username"),
                     properties.getProperty("password"));
+            //关闭自动提交 开启事务
             connection.setAutoCommit(false);
             statement = connection.createStatement();
             resultSet = statement.executeQuery("select * from user");
@@ -33,7 +34,7 @@ public class JDBCtest {
                         resultSet.getString(4) + " " +
                         resultSet.getString(5));
             }
-
+            // 提交事务
             connection.commit();
         }catch (Exception e){
             e.printStackTrace();
