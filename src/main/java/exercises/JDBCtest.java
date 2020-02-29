@@ -3,15 +3,15 @@ package exercises;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.Properties;
 
 public class JDBCtest {
     public static void main(String[] args) {
         Properties properties = new Properties();
+        Connection connection = null;
+        Statement  statement = null;
+        ResultSet resultSet = null;
         try {
             properties.load(new FileInputStream("F:\\codeExercises\\src\\main\\resources\\db.properties"));
         }catch (IOException e){
@@ -19,12 +19,13 @@ public class JDBCtest {
         }
         try{
             Class.forName(properties.getProperty("driver"));
-            Connection connection = DriverManager.getConnection(
+            connection = DriverManager.getConnection(
                     properties.getProperty("url"),
                     properties.getProperty("username"),
                     properties.getProperty("password"));
-            Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("select * from user");
+            connection.setAutoCommit(false);
+            statement = connection.createStatement();
+            resultSet = statement.executeQuery("select * from user");
             while (resultSet.next()) {
                 System.out.println(resultSet.getString(1) + " " +
                         resultSet.getString(2) + " " +
@@ -32,8 +33,19 @@ public class JDBCtest {
                         resultSet.getString(4) + " " +
                         resultSet.getString(5));
             }
+
+            connection.commit();
         }catch (Exception e){
             e.printStackTrace();
+        }
+        finally {
+            try {
+                resultSet.close();
+                statement.close();
+                connection.close();
+            }catch (SQLException e){
+                e.printStackTrace();
+            }
         }
 
 
