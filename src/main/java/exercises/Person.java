@@ -1,9 +1,11 @@
 package exercises;
 
-public class Person {
-    {
-        System.out.println("静态代码块执行了");
-    }
+import java.io.Serializable;
+
+public class Person  implements Serializable {
+//    {
+//        System.out.println("静态代码块执行了");
+//    }
     static int num;
     private String name;
 
