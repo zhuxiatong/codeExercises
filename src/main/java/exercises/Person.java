@@ -8,13 +8,20 @@ public class Person  implements Serializable {
 //    }
     static int num;
     private String name;
-
+    //无需序列化
+    transient int z;
 
     @Override
     public String toString() {
         return "Person{" +
                 "name='" + name + '\'' +
+                ", z=" + z +
                 '}';
+    }
+
+    public Person(String name, int z) {
+        this.name = name;
+        this.z = z;
     }
 
     public Person(String name) {

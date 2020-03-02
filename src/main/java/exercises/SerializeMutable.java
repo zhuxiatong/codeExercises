@@ -10,7 +10,8 @@ public class SerializeMutable {
         try{
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream("object.txt"));
             ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream("object.txt"));
-            Person zxt = new Person("zxt");
+            Person zxt = new Person("zxt",66);
+            System.out.println(zxt);
             objectOutputStream.writeObject(zxt);
             Person z = (Person) objectInputStream.readObject();
             System.out.println(z);
