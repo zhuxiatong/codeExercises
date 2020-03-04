@@ -26,27 +26,28 @@ public class ZXTSortTest {
         if (h >= t){
             return;
         }
-        int p = getp(ints,h,t);
-        quicklySortR(ints,h,p-1);
+        int p = getPoint(ints,h,t);
+        quicklySortR(ints,0,p-1);
         quicklySortR(ints,p+1,t);
     }
 
-    private static int getp(int[] ints, int h, int t) {
+    private static int getPoint(int[] ints, int h, int t) {
         int tmp = ints[t];
-        int i = 0;
         int swap = 0;
-        for (int j =0;j<t;j++){
-            if (ints[j] <tmp){
-                swap = ints[j];
-                ints[j] =ints[i];
-                ints[i] = swap;
+        int i = h;
+        for (int j = h; j<t;j++){
+            if (ints[j]<tmp){
+                tmp = ints[i];
+                ints[i] = ints[j];
+                ints[j] = tmp;
                 i++;
             }
         }
-        swap = ints[i];
+        tmp = ints[i];
         ints[i] = ints[t];
-        ints[t] = swap;
+        ints[t] = tmp;
         return i;
     }
+
 
 }
