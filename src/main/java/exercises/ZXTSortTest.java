@@ -8,6 +8,7 @@ public class ZXTSortTest {
         int[] ints = new int[10];
         Random random = new Random(100);
         for (int i = 0; i < ints.length;i++){
+
             ints[i] = random.nextInt(100);
         }
         //
