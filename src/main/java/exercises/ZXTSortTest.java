@@ -16,6 +16,7 @@ public class ZXTSortTest {
         quicklySort(ints,ints.length);
         for (int anInt : ints) {
             System.out.println(anInt);
+
         }
     }
 
