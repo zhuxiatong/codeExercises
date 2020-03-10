@@ -21,34 +21,35 @@ public class ZXTSortTest {
     }
 
     private static void quicklySort(int[] ints, int length) {
-        quicklySortR(ints,0,length-1);
+        quicklySortC(ints,0,length-1);
     }
 
-    private static void quicklySortR(int[] ints, int h, int t) {
-        if (h >= t){
+    private static void quicklySortC(int[] ints, int h, int t) {
+        if (h >t){
             return;
         }
         int p = getPoint(ints,h,t);
-        quicklySortR(ints,0,p-1);
-        quicklySortR(ints,p+1,t);
+        quicklySortC(ints,h,p-1);
+        quicklySortC(ints,p+1,t);
     }
 
     private static int getPoint(int[] ints, int h, int t) {
-        int tmp = ints[t];
+        int p = ints[t];
         int swap = 0;
         int i = h;
         for (int j = h; j<t;j++){
-            if (ints[j]<tmp){
-                tmp = ints[i];
-                ints[i] = ints[j];
-                ints[j] = tmp;
+            if (ints[j] < p){
+                swap = ints[j];
+                ints[j] = ints[i];
+                ints[i] = swap;
                 i++;
             }
         }
-        tmp = ints[i];
+        swap = ints[i];
         ints[i] = ints[t];
-        ints[t] = tmp;
+        ints[t] =swap;
         return i;
+
     }
 
 
