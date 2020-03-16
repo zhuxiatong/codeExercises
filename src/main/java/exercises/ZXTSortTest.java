@@ -20,9 +20,15 @@ public class ZXTSortTest {
         }
     }
 
-    private static void quicklySort(int[] ints, int length) {
-        quicklySortC(ints,0,length-1);
+    private  static int Sortmin(int[] data){
+        quicklySort(data,data.length);
+        int res = data[0];
+        return  res;
     }
+    private  static  void quicklySort(int[] data,int length){
+        quicklySortC(data,0,length-1);
+    }
+
 
     private static void quicklySortC(int[] ints, int h, int t) {
         if (h >t){
