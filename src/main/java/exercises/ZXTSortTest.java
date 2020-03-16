@@ -1,7 +1,6 @@
 package exercises;
 
 import java.util.Random;
-import java.util.stream.IntStream;
 
 public class ZXTSortTest {
     public static void main(String[] args) {
