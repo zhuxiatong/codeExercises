@@ -11,6 +11,7 @@ public class ZXTSortTest {
 
             ints[i] = random.nextInt(100);
         }
+
         //
         System.out.println(ints.length);
         quicklySort(ints,ints.length);
