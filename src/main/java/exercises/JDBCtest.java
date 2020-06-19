@@ -13,7 +13,7 @@ public class JDBCtest {
         Statement  statement = null;
         ResultSet resultSet = null;
         try {
-            properties.load(new FileInputStream("F:\\codeExercises\\src\\main\\resources\\db.properties"));
+            properties.load(new FileInputStream("G:\\data\\code\\codeExercises\\src\\main\\resources\\db.properties"));
         }catch (IOException e){
             e.printStackTrace();
         }
@@ -27,13 +27,11 @@ public class JDBCtest {
             // 开启事务
             connection.setAutoCommit(false);
             statement = connection.createStatement();
-            resultSet = statement.executeQuery("select * from user");
+            resultSet = statement.executeQuery("select * from student");
             while (resultSet.next()) {
                 System.out.println(resultSet.getString(1) + " " +
                         resultSet.getString(2) + " " +
-                        resultSet.getString(3) + " " +
-                        resultSet.getString(4) + " " +
-                        resultSet.getString(5));
+                        resultSet.getString(3) + " " );
             }
             // 提交事务
             connection.commit();
