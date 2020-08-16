@@ -17,6 +17,7 @@ public class CalenderTest {
         calendar.set(2019,5,5,14,35,20);
         System.out.println(calendar.getTime());
         calendar.roll(Calendar.YEAR,-1);
+
         calendar.roll(Calendar.DAY_OF_WEEK,-6);
         System.out.println(calendar.getTime());
     }
